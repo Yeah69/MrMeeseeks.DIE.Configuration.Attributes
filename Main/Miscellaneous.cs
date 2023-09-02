@@ -114,4 +114,13 @@ public class AnalyticsAttribute : Attribute
 {
     public AnalyticsAttribute(Analytics analytics) { }
 }
+
+/// <summary>
+/// Configures a mapping to an attribute which assigns a key to an implementation type.
+/// </summary>
+[AttributeUsage(AttributeTargets.Assembly | AttributeTargets.Class)]
+public class InjectionKeyMappingAttribute : Attribute
+{
+    public InjectionKeyMappingAttribute(Type attributeType) { }
+}
 // ReSharper enable UnusedParameter.Local
