@@ -123,4 +123,13 @@ public class InjectionKeyMappingAttribute : Attribute
 {
     public InjectionKeyMappingAttribute(Type attributeType) { }
 }
+
+/// <summary>
+/// Filters a mapping to an attribute which assigns a key to an implementation type.
+/// </summary>
+[AttributeUsage(AttributeTargets.Assembly | AttributeTargets.Class)]
+public class FilterInjectionKeyMappingAttribute : Attribute
+{
+    public FilterInjectionKeyMappingAttribute(Type attributeType) { }
+}
 // ReSharper enable UnusedParameter.Local
