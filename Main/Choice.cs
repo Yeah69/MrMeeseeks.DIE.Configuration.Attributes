@@ -149,3 +149,21 @@ public class FilterImplementationCollectionChoiceAttribute : Attribute
 {
     public FilterImplementationCollectionChoiceAttribute(Type type) {}
 }
+
+/// <summary>
+/// Configures an injection key assignment to a specific implementation type. Pass the key first, then the implementation type.
+/// </summary>
+[AttributeUsage(AttributeTargets.Assembly | AttributeTargets.Class, AllowMultiple = true)]
+public class InjectionKeyChoiceAttribute : Attribute
+{
+    public InjectionKeyChoiceAttribute(object key, Type implementationType) {}
+}
+
+/// <summary>
+/// Discards the inherited injection key choice to a specific implementation type. Pass the key first, then the implementation type.
+/// </summary>
+[AttributeUsage(AttributeTargets.Class, AllowMultiple = true)]
+public class FilterInjectionKeyChoiceAttribute : Attribute
+{
+    public FilterInjectionKeyChoiceAttribute(object key, Type implementationType) {}
+}
