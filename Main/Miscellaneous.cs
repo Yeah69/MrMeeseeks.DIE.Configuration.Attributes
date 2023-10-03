@@ -18,7 +18,7 @@ public class CustomScopeForRootTypesAttribute : Attribute
 /// Enhances ranges (containers & scopes) by definitions for initialized instances.
 /// See https://die.mrmeeseeks.dev/scoping/
 /// </summary>
-[AttributeUsage(AttributeTargets.Class, AllowMultiple = true)]
+[AttributeUsage(AttributeTargets.Class | AttributeTargets.Interface, AllowMultiple = true)]
 public class InitializedInstancesAttribute : Attribute
 {
     public InitializedInstancesAttribute(params Type[] types)
@@ -66,7 +66,7 @@ public class UserDefinedInitializerParametersInjectionAttribute : Attribute
 /// Lets you specify which types have an initialization method that should be used during instantiation. Pass the type that owns the initialization method first, then the name of the method. There is one constraint on the method: it must return either nothing (void), a Task, or a ValueTask.
 /// See https://die.mrmeeseeks.dev/configuration/miscellaneous/
 /// </summary>
-[AttributeUsage(AttributeTargets.Assembly | AttributeTargets.Class, AllowMultiple = true)]
+[AttributeUsage(AttributeTargets.Assembly | AttributeTargets.Class | AttributeTargets.Interface, AllowMultiple = true)]
 public class InitializerAttribute : Attribute
 {
     public InitializerAttribute(Type type, string methodName)
@@ -78,7 +78,7 @@ public class InitializerAttribute : Attribute
 /// Discards an active initializer method definition. Pass the type that owns the initializer method.
 /// See https://die.mrmeeseeks.dev/configuration/miscellaneous/
 /// </summary>
-[AttributeUsage(AttributeTargets.Class, AllowMultiple = true)]
+[AttributeUsage(AttributeTargets.Class | AttributeTargets.Interface, AllowMultiple = true)]
 public class FilterInitializerAttribute : Attribute
 {
     public FilterInitializerAttribute(Type type)
@@ -90,7 +90,7 @@ public class FilterInitializerAttribute : Attribute
 /// Defines a create function that DIE should create in the container. This attribute defines which classes should be interpreted as containers. Pass first the type to be returned by the create function and then the name to be given to the create function.
 /// See https://die.mrmeeseeks.dev/configuration/miscellaneous/
 /// </summary>
-[AttributeUsage(AttributeTargets.Class, AllowMultiple = true)]
+[AttributeUsage(AttributeTargets.Class | AttributeTargets.Interface, AllowMultiple = true)]
 public class CreateFunctionAttribute : Attribute
 {
     public CreateFunctionAttribute(Type type, string methodNamePrefix, params Type[] parameterTypes)
@@ -118,7 +118,7 @@ public class AnalyticsAttribute : Attribute
 /// <summary>
 /// Configures a mapping to an attribute which assigns a key to an implementation type.
 /// </summary>
-[AttributeUsage(AttributeTargets.Assembly | AttributeTargets.Class)]
+[AttributeUsage(AttributeTargets.Assembly | AttributeTargets.Class | AttributeTargets.Interface)]
 public class InjectionKeyMappingAttribute : Attribute
 {
     public InjectionKeyMappingAttribute(Type attributeType) { }
@@ -127,7 +127,7 @@ public class InjectionKeyMappingAttribute : Attribute
 /// <summary>
 /// Filters a mapping to an attribute which assigns a key to an implementation type.
 /// </summary>
-[AttributeUsage(AttributeTargets.Assembly | AttributeTargets.Class)]
+[AttributeUsage(AttributeTargets.Assembly | AttributeTargets.Class | AttributeTargets.Interface)]
 public class FilterInjectionKeyMappingAttribute : Attribute
 {
     public FilterInjectionKeyMappingAttribute(Type attributeType) { }
