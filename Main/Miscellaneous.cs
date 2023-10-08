@@ -118,7 +118,7 @@ public class AnalyticsAttribute : Attribute
 /// <summary>
 /// Configures a mapping to an attribute which assigns a key to an implementation type.
 /// </summary>
-[AttributeUsage(AttributeTargets.Assembly | AttributeTargets.Class | AttributeTargets.Interface)]
+[AttributeUsage(AttributeTargets.Assembly | AttributeTargets.Class | AttributeTargets.Interface, AllowMultiple = true)]
 public class InjectionKeyMappingAttribute : Attribute
 {
     public InjectionKeyMappingAttribute(Type attributeType) { }
@@ -127,9 +127,27 @@ public class InjectionKeyMappingAttribute : Attribute
 /// <summary>
 /// Filters a mapping to an attribute which assigns a key to an implementation type.
 /// </summary>
-[AttributeUsage(AttributeTargets.Assembly | AttributeTargets.Class | AttributeTargets.Interface)]
+[AttributeUsage(AttributeTargets.Class | AttributeTargets.Interface, AllowMultiple = true)]
 public class FilterInjectionKeyMappingAttribute : Attribute
 {
     public FilterInjectionKeyMappingAttribute(Type attributeType) { }
+}
+
+/// <summary>
+/// Configures a mapping to an attribute which assigns a decoration ordinal to a decoration implementation.
+/// </summary>
+[AttributeUsage(AttributeTargets.Assembly | AttributeTargets.Class | AttributeTargets.Interface, AllowMultiple = true)]
+public class DecorationOrdinalMappingAttribute : Attribute
+{
+    public DecorationOrdinalMappingAttribute(Type attributeType) { }
+}
+
+/// <summary>
+/// Filters a mapping to an attribute which assigns a decoration ordinal to a decoration implementation.
+/// </summary>
+[AttributeUsage(AttributeTargets.Class | AttributeTargets.Interface, AllowMultiple = true)]
+public class FilterDecorationOrdinalMappingAttribute : Attribute
+{
+    public FilterDecorationOrdinalMappingAttribute(Type attributeType) { }
 }
 // ReSharper enable UnusedParameter.Local

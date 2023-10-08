@@ -167,3 +167,21 @@ public class FilterInjectionKeyChoiceAttribute : Attribute
 {
     public FilterInjectionKeyChoiceAttribute(object key, Type implementationType) {}
 }
+
+/// <summary>
+/// Configures a decoration ordinal for a decoration implementation type. Pass the decoration implementation type first, then the ordinal.
+/// </summary>
+[AttributeUsage(AttributeTargets.Assembly | AttributeTargets.Class | AttributeTargets.Interface, AllowMultiple = true)]
+public class DecorationOrdinalChoiceAttribute : Attribute
+{
+    public DecorationOrdinalChoiceAttribute(Type implementationType, int ordinal) {}
+}
+
+/// <summary>
+/// Discards the inherited decoration ordinal for a decoration implementation type.
+/// </summary>
+[AttributeUsage(AttributeTargets.Class | AttributeTargets.Interface, AllowMultiple = true)]
+public class FilterDecorationOrdinalChoiceAttribute : Attribute
+{
+    public FilterDecorationOrdinalChoiceAttribute(Type implementationType) {}
+}
