@@ -1,5 +1,5 @@
 // ReSharper disable UnusedParameter.Local
-
+// ReSharper disable UnusedType.Global
 namespace MrMeeseeks.DIE.Configuration.Attributes;
 
 /// <summary>
@@ -419,3 +419,5 @@ public class FilterCompositeAbstractionAggregationAttribute : Attribute
 {
     public FilterCompositeAbstractionAggregationAttribute(params Type[] types) {}
 }
+// ReSharper enable UnusedParameter.Local
+// ReSharper enable UnusedType.Global

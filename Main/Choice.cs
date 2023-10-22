@@ -1,5 +1,5 @@
 // ReSharper disable UnusedParameter.Local
-
+// ReSharper disable UnusedType.Global
 namespace MrMeeseeks.DIE.Configuration.Attributes;
 
 /// <summary>
@@ -185,3 +185,23 @@ public class FilterDecorationOrdinalChoiceAttribute : Attribute
 {
     public FilterDecorationOrdinalChoiceAttribute(Type implementationType) {}
 }
+
+/// <summary>
+/// Configures an interceptor. Pass the interceptor implementation type first, then the abstractions that it gets applied to.
+/// </summary>
+[AttributeUsage(AttributeTargets.Assembly | AttributeTargets.Class | AttributeTargets.Interface, AllowMultiple = true)]
+public class InterceptorChoiceAttribute : Attribute
+{
+    public InterceptorChoiceAttribute(Type interceptorType, params Type[] abstractionTypes) {}
+}
+
+/// <summary>
+/// Discards the interceptor implementation type.
+/// </summary>
+[AttributeUsage(AttributeTargets.Class | AttributeTargets.Interface, AllowMultiple = true)]
+public class FilterInterceptorChoiceAttribute : Attribute
+{
+    public FilterInterceptorChoiceAttribute(Type interceptorType) {}
+}
+// ReSharper enable UnusedParameter.Local
+// ReSharper enable UnusedType.Global

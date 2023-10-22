@@ -160,3 +160,4 @@ public class GenericParameterMappingAttribute : Attribute
     public GenericParameterMappingAttribute(Type type, string genericParameterName) { }
 }
 // ReSharper enable UnusedParameter.Local
+// ReSharper enable UnusedType.Global
