@@ -150,4 +150,13 @@ public class FilterDecorationOrdinalMappingAttribute : Attribute
 {
     public FilterDecorationOrdinalMappingAttribute(Type attributeType) { }
 }
+
+/// <summary>
+/// Configures a mapping from a generic parameter on a container to a given generic parameter on a type.
+/// </summary>
+[AttributeUsage(AttributeTargets.GenericParameter)]
+public class GenericParameterMappingAttribute : Attribute
+{
+    public GenericParameterMappingAttribute(Type type, string genericParameterName) { }
+}
 // ReSharper enable UnusedParameter.Local
