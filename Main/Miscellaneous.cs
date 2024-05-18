@@ -154,7 +154,7 @@ public class FilterDecorationOrdinalMappingAttribute : Attribute
 /// <summary>
 /// Configures a mapping from a generic parameter on a container to a given generic parameter on a type.
 /// </summary>
-[AttributeUsage(AttributeTargets.GenericParameter)]
+[AttributeUsage(AttributeTargets.GenericParameter, AllowMultiple = true)]
 public class GenericParameterMappingAttribute : Attribute
 {
     public GenericParameterMappingAttribute(Type type, string genericParameterName) { }
